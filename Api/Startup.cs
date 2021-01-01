@@ -35,6 +35,7 @@ namespace Api
             // Our Scopes
             services.AddScoped<IProjectDao, ProjectDao>();
             services.AddScoped<IConsultantDao, ConsultantDao>();
+            services.AddScoped<IAffectationDao, AffectationDao>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

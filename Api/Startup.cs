@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Api.Dao;
 using Api.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -31,6 +32,8 @@ namespace Api
             // DB configuration
             services.AddDbContext<AfdtechContext>(option => option.UseSqlServer(Configuration.GetConnectionString("AfdtechDB")));
 
+            // Our Scopes
+            services.AddScoped<IProjectDao, ProjectDao>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

@@ -1,0 +1,6 @@
+<div class="list-group mb-1" *ngFor="let r of routes">
+  <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+     [routerLink]="r.path" routerLinkActive="active">
+    {{r.data?.title}}
+  </a>
+</div>

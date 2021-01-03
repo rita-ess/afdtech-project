@@ -10,7 +10,6 @@ import {ProjectListComponent} from './project/project-list/project-list.componen
 import {ConsultantComponent} from './consultant/consultant.component';
 import {ConsultantListComponent} from './consultant/consultant-list/consultant-list.component';
 import {AffectationComponent} from './affectation/affectation.component';
-import {AffectationFormComponent} from './affectation/affectation-form/affectation-form.component';
 import {AffectationListComponent} from './affectation/affectation-list/affectation-list.component';
 import {AffectationService} from './services/affectation.service';
 import {ConsultantService} from './services/consultant.service';
@@ -20,9 +19,11 @@ import {HttpClientModule} from '@angular/common/http';
 import {ProjectAddComponent} from './project/project-add/project-add.component';
 import {ProjectEditComponent} from './project/project-edit/project-edit.component';
 import {FormComponent} from './form/form.component';
-import { ModalComponent } from './modal/modal.component';
-import { ConsultantEditComponent } from './consultant/consultant-edit/consultant-edit.component';
-import { ConsultantAddComponent } from './consultant/consultant-add/consultant-add.component';
+import {ModalComponent} from './modal/modal.component';
+import {ConsultantEditComponent} from './consultant/consultant-edit/consultant-edit.component';
+import {ConsultantAddComponent} from './consultant/consultant-add/consultant-add.component';
+import { AffectationAddComponent } from './affectation/affectation-add/affectation-add.component';
+import { AffectationEditComponent } from './affectation/affectation-edit/affectation-edit.component';
 
 @NgModule({
   declarations: [
@@ -34,14 +35,15 @@ import { ConsultantAddComponent } from './consultant/consultant-add/consultant-a
     ConsultantComponent,
     ConsultantListComponent,
     AffectationComponent,
-    AffectationFormComponent,
     AffectationListComponent,
     ProjectAddComponent,
     ProjectEditComponent,
     FormComponent,
     ModalComponent,
     ConsultantEditComponent,
-    ConsultantAddComponent
+    ConsultantAddComponent,
+    AffectationAddComponent,
+    AffectationEditComponent
   ],
   imports: [
     BrowserModule,

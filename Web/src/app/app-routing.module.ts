@@ -6,9 +6,9 @@ import {ConsultantComponent} from './consultant/consultant.component';
 import {ConsultantListComponent} from './consultant/consultant-list/consultant-list.component';
 import {AffectationComponent} from './affectation/affectation.component';
 import {AffectationListComponent} from './affectation/affectation-list/affectation-list.component';
-import {AffectationFormComponent} from './affectation/affectation-form/affectation-form.component';
 import {ProjectAddComponent} from './project/project-add/project-add.component';
 import {ConsultantAddComponent} from './consultant/consultant-add/consultant-add.component';
+import {AffectationAddComponent} from './affectation/affectation-add/affectation-add.component';
 
 const routes: Routes = [
   {
@@ -31,7 +31,7 @@ const routes: Routes = [
     path: 'affectations', component: AffectationComponent, data: {title: 'Affectations'},
     children: [
       {path: 'list', component: AffectationListComponent, data: {title: 'All Affectations'}},
-      {path: 'add', component: AffectationFormComponent, data: {title: 'Add Affectation'}}
+      {path: 'add', component: AffectationAddComponent, data: {title: 'Add Affectation'}}
     ]
   },
   {path: '**', redirectTo: '/not-found'}

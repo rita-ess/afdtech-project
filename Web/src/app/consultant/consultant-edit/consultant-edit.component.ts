@@ -63,7 +63,7 @@ export class ConsultantEditComponent implements OnInit {
       formValue.email
     );
     this.service.update(consultant).subscribe((data: any) => {
-      alert('updated successfuly');
+      alert('updated successfully');
     });
   }
 

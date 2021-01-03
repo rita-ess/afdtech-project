@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AffectationFormComponent } from './affectation-form.component';
+import { AffectationEditComponent } from './affectation-edit.component';
 
-describe('AffectationFormComponent', () => {
-  let component: AffectationFormComponent;
-  let fixture: ComponentFixture<AffectationFormComponent>;
+describe('AffectationEditComponent', () => {
+  let component: AffectationEditComponent;
+  let fixture: ComponentFixture<AffectationEditComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AffectationFormComponent ]
+      declarations: [ AffectationEditComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AffectationFormComponent);
+    fixture = TestBed.createComponent(AffectationEditComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

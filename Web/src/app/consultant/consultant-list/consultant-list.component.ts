@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ConsultantService} from '../../services/consultant.service';
+import {Consultant} from '../../models/Consultant.model';
 
 @Component({
   selector: 'app-consultant-list',
@@ -7,9 +9,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConsultantListComponent implements OnInit {
 
-  constructor() { }
+  consultants: any;
 
-  ngOnInit(): void {
+  constructor(private service: ConsultantService) {
   }
 
+  ngOnInit(): void {
+    this.getConsultants();
+  }
+
+  getConsultants(): void {
+    this.service.getAll().subscribe((data: Consultant[]) => {
+      this.consultants = data;
+      console.log('consultants', this.consultants);
+    });
+  }
+
+  deleteConsultant(id: number): void {
+    if (confirm('Do you really want to delete this ?')) {
+      this.service.delete(id).subscribe((data: any) => {
+        console.log('post consultants ', data);
+        this.getConsultants();
+        alert('This Consultant was deleted');
+      });
+    }
+  }
+
+  showModal(c: Consultant): void {
+    // @ts-ignore
+    $('#editConsultant_' + c.id).modal('show');
+  }
 }

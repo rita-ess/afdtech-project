@@ -8,7 +8,6 @@ import {SubnavComponent} from './navigation/subnav/subnav.component';
 import {ProjectComponent} from './project/project.component';
 import {ProjectListComponent} from './project/project-list/project-list.component';
 import {ConsultantComponent} from './consultant/consultant.component';
-import {ConsultantFormComponent} from './consultant/consultant-form/consultant-form.component';
 import {ConsultantListComponent} from './consultant/consultant-list/consultant-list.component';
 import {AffectationComponent} from './affectation/affectation.component';
 import {AffectationFormComponent} from './affectation/affectation-form/affectation-form.component';
@@ -22,6 +21,8 @@ import {ProjectAddComponent} from './project/project-add/project-add.component';
 import {ProjectEditComponent} from './project/project-edit/project-edit.component';
 import {FormComponent} from './form/form.component';
 import { ModalComponent } from './modal/modal.component';
+import { ConsultantEditComponent } from './consultant/consultant-edit/consultant-edit.component';
+import { ConsultantAddComponent } from './consultant/consultant-add/consultant-add.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,6 @@ import { ModalComponent } from './modal/modal.component';
     ProjectComponent,
     ProjectListComponent,
     ConsultantComponent,
-    ConsultantFormComponent,
     ConsultantListComponent,
     AffectationComponent,
     AffectationFormComponent,
@@ -39,7 +39,9 @@ import { ModalComponent } from './modal/modal.component';
     ProjectAddComponent,
     ProjectEditComponent,
     FormComponent,
-    ModalComponent
+    ModalComponent,
+    ConsultantEditComponent,
+    ConsultantAddComponent
   ],
   imports: [
     BrowserModule,

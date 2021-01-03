@@ -24,8 +24,8 @@ export class ProjectService {
     return this.http.post<Project>(`${SERVER_PROJECTS}/`, project);
   }
 
-  update(id: number, project: Project): Observable<Project> {
-    return this.http.put<Project>(`${SERVER_PROJECTS}/${id}`, project);
+  update(project: Project): Observable<Project> {
+    return this.http.put<Project>(`${SERVER_PROJECTS}/${project.id}`, project);
   }
 
   delete(id: number): Observable<Project> {

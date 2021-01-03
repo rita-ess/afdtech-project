@@ -1,0 +1,15 @@
+<!--<form [formGroup]="userForm" (ngSubmit)="addProject()">
+  <div class="mb-3">
+    <label for="name" class="form-label">Name of the project</label>
+    <input class="form-control" id="name" placeholder="Enter the name" formControlName="name">
+  </div>
+  <div class="mb-3">
+    <label for="description" class="form-label">Make a description</label>
+    <textarea class="form-control" id="description" formControlName="description"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>-->
+<form [formGroup]="userForm" (ngSubmit)="addProject()">
+  <app-form [inputs]="inputs" [myFormGroup]="userForm"></app-form>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

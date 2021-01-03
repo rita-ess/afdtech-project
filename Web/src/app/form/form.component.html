@@ -1,0 +1,12 @@
+<div class="mb-3" *ngFor="let i of inputs" [formGroup]="myFormGroup">
+  <label for="{{i.id}}" class="form-label">{{i.label}}</label>
+
+  <input *ngIf="i.type!='textarea'" class="form-control" id="{{i.id}}" placeholder="{{i.placeholder}}"
+         [formControlName]="i.name" type="{{i.type}}">
+
+  <textarea *ngIf="i.type=='textarea'" class="form-control" id="{{i.id}}" placeholder="{{i.placeholder}}"
+            [formControlName]="i.name">
+    {{i.value}}
+  </textarea>
+</div>
+

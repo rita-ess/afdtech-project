@@ -2,13 +2,14 @@ import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {ProjectListComponent} from './project/project-list/project-list.component';
 import {ProjectComponent} from './project/project.component';
-import {ProjectFormComponent} from './project/project-form/project-form.component';
 import {ConsultantComponent} from './consultant/consultant.component';
 import {ConsultantListComponent} from './consultant/consultant-list/consultant-list.component';
 import {ConsultantFormComponent} from './consultant/consultant-form/consultant-form.component';
 import {AffectationComponent} from './affectation/affectation.component';
 import {AffectationListComponent} from './affectation/affectation-list/affectation-list.component';
 import {AffectationFormComponent} from './affectation/affectation-form/affectation-form.component';
+import {ProjectAddComponent} from './project/project-add/project-add.component';
+import {ProjectEditComponent} from './project/project-edit/project-edit.component';
 
 const routes: Routes = [
   {
@@ -17,7 +18,7 @@ const routes: Routes = [
     data: {title: 'Projects'},
     children: [
       {path: 'list', component: ProjectListComponent, data: {title: 'List of Projects'}},
-      {path: 'add', component: ProjectFormComponent, data: {title: 'Add Project'}}
+      {path: 'add', component: ProjectAddComponent, data: {title: 'Add Project'}}
     ]
   },
   {

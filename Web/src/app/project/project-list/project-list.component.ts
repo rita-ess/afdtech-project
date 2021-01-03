@@ -11,29 +11,30 @@ export class ProjectListComponent implements OnInit {
 
   projects: any;
 
-
   constructor(private service: ProjectService) {
   }
 
   ngOnInit(): void {
     this.getProjects();
   }
-
-  getProjects(): void {
+  public getProjects(): void {
     this.service.getAll().subscribe((data: Project[]) => {
       this.projects = data;
-      console.log('projects', this.projects);
     });
   }
 
   deleteProject(id: number): void {
     if (confirm('Do you really want to delete this ?')) {
       this.service.delete(id).subscribe((data: any) => {
-        console.log('post consultants ', data);
         this.getProjects();
         alert('This Project was deleted');
       });
     }
+  }
+
+  showModal(p: Project): void {
+    // @ts-ignore
+    $('#editProject_' + p.id).modal('show');
   }
 
 }

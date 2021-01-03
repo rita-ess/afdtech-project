@@ -47,22 +47,14 @@ namespace Api.Controllers
         [HttpPut("{id}")]
         public ActionResult<Project> Put(int id, Project project)
         {
-
-         /*   if (_projectDao.GetById(id) == null)
-            {
-                return NotFound();
-            }*/
-
-            if (id == null)
+            var p = _projectDao.GetById(id);
+            if (p == null)
             {
                 return NotFound();
             }
-            if (project == null)
-            {
-                return NotFound();
-            }
-            project.Id = id;
-            return _projectDao.Update(project);
+            p.Name = project.Name;
+            p.Description = project.Description;
+            return _projectDao.Update(p);
             
         }
 

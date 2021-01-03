@@ -47,8 +47,15 @@ namespace Api.Controllers
         [HttpPut("{id}")]
         public ActionResult<Consultant> Put(int id, Consultant consultant)
         {
-            consultant.Id = id;
-            return _consultantDao.Update(consultant);
+            var c = _consultantDao.GetById(id);
+            if (c == null)
+            {
+                return NotFound();
+            }
+            c.FirstName = consultant.FirstName;
+            c.LastName = consultant.LastName;
+            c.Email = consultant.Email;
+            return _consultantDao.Update(c);
         }
 
         // DELETE api/<ConsultantController>/5

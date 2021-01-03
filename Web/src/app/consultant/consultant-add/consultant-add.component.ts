@@ -24,23 +24,23 @@ export class ConsultantAddComponent implements OnInit {
     this.inputs = [
       {
         id: 'firstName',
-        placeholder: 'Enter the name',
+        placeholder: 'Enter the First name',
         name: 'firstName',
-        label: 'firstName of the Consultant',
+        label: 'First name of the Consultant',
         type: 'text'
       },
       {
         id: 'lastName',
-        placeholder: 'Enter the lastName',
+        placeholder: 'Enter the Last name',
         name: 'lastName',
-        label: 'Make a description',
+        label: 'Last name of the Consultant',
         type: 'text'
       },
       {
         id: 'email',
-        placeholder: 'Enter the email',
+        placeholder: 'Enter the Email',
         name: 'email',
-        label: 'Make a description',
+        label: 'Email of the Consultant',
         type: 'email'
       }
     ];

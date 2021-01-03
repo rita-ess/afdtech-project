@@ -4,12 +4,11 @@ import {ProjectListComponent} from './project/project-list/project-list.componen
 import {ProjectComponent} from './project/project.component';
 import {ConsultantComponent} from './consultant/consultant.component';
 import {ConsultantListComponent} from './consultant/consultant-list/consultant-list.component';
-import {ConsultantFormComponent} from './consultant/consultant-form/consultant-form.component';
 import {AffectationComponent} from './affectation/affectation.component';
 import {AffectationListComponent} from './affectation/affectation-list/affectation-list.component';
 import {AffectationFormComponent} from './affectation/affectation-form/affectation-form.component';
 import {ProjectAddComponent} from './project/project-add/project-add.component';
-import {ProjectEditComponent} from './project/project-edit/project-edit.component';
+import {ConsultantAddComponent} from './consultant/consultant-add/consultant-add.component';
 
 const routes: Routes = [
   {
@@ -25,7 +24,7 @@ const routes: Routes = [
     path: 'consultants', component: ConsultantComponent, data: {title: 'Consultants'},
     children: [
       {path: 'list', component: ConsultantListComponent, data: {title: 'List of Consultants'}},
-      {path: 'add', component: ConsultantFormComponent, data: {title: 'Add Consultant'}}
+      {path: 'add', component: ConsultantAddComponent, data: {title: 'Add Consultant'}}
     ]
   },
   {

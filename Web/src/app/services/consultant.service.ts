@@ -24,8 +24,8 @@ export class ConsultantService {
     return this.http.post<Consultant>(`${SERVER_CONSULTANTS}/`, consultant);
   }
 
-  update(id: number, consultant: Consultant): Observable<Consultant> {
-    return this.http.put<Consultant>(`${SERVER_CONSULTANTS}/${id}`, consultant);
+  update(consultant: Consultant): Observable<Consultant> {
+    return this.http.put<Consultant>(`${SERVER_CONSULTANTS}/${consultant.id}`, consultant);
   }
 
   delete(id: number): Observable<Consultant> {

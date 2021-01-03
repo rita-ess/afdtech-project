@@ -11,7 +11,7 @@ import {ProjectListComponent} from "../project-list/project-list.component";
 })
 export class ProjectEditComponent implements OnInit {
 
-  userForm: any;
+  projectForm: any;
   inputs: any;
 
   @Input()
@@ -42,14 +42,14 @@ export class ProjectEditComponent implements OnInit {
       }
     ];
 
-    this.userForm = this.formBuilder.group({
+    this.projectForm = this.formBuilder.group({
       name: [this.project.name, Validators.required],
       description: [this.project.description, Validators.required]
     });
   }
 
   updateProject(): void {
-    const formValue = this.userForm.value;
+    const formValue = this.projectForm.value;
     const newProject = new Project(
       this.project.id,
       formValue.name,

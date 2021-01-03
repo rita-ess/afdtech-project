@@ -10,7 +10,7 @@ import {Project} from '../../models/Project.model';
 })
 export class ProjectAddComponent implements OnInit {
 
-  userForm: any;
+  projectForm: any;
   inputs: any;
 
   constructor(private service: ProjectService, private formBuilder: FormBuilder) {
@@ -38,14 +38,14 @@ export class ProjectAddComponent implements OnInit {
       }
     ];
 
-    this.userForm = this.formBuilder.group({
+    this.projectForm = this.formBuilder.group({
       name: ['', Validators.required],
       description: ['', Validators.required]
     });
   }
 
   addProject(): void {
-    const formValue = this.userForm.value;
+    const formValue = this.projectForm.value;
     const newProject = new Project(
       0,
       formValue.name,

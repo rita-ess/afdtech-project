@@ -1,1 +1,12 @@
-<p>consultant-list works!</p>
+<div class="card mb-3" *ngFor="let c of consultants">
+  <div class="card-body">
+    <td><h5 class="card-title">{{c.firstName}}</h5>
+      <p class="card-text">{{c.lastName}}</p>
+      <p class="card-text">{{c.email}}</p></td>
+    <td>
+      <button (click)="showModal(c)" class="btn btn-warning mr-1">Edit</button>
+      <button (click)="deleteConsultant(c.id)" class="btn btn-danger">Delete</button>
+    </td>
+  </div>
+  <app-consultant-edit [consultant]="c"></app-consultant-edit>
+</div>

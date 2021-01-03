@@ -57,6 +57,7 @@ export class AffectationEditComponent implements OnInit {
     );
     this.service.update(affectation).subscribe((data: any) => {
       alert('Updated');
+      window.location.reload();
     });
   }
 

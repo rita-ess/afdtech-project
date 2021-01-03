@@ -64,6 +64,7 @@ export class ConsultantEditComponent implements OnInit {
     );
     this.service.update(consultant).subscribe((data: any) => {
       alert('updated successfully');
+      window.location.reload();
     });
   }
 

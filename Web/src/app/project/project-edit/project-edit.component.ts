@@ -57,6 +57,7 @@ export class ProjectEditComponent implements OnInit {
     );
     this.service.update(newProject).subscribe((data: any) => {
       alert('updated successfuly');
+      window.location.reload();
     });
   }
 }

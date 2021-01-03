@@ -48,10 +48,16 @@ namespace Api.Controllers
         [HttpPut("{id}")]
         public ActionResult<Affectation> Put(int id, Affectation affectation)
         {
-             
-            affectation.Id = id;
+            var a = _affectationDao.GetById(id);
+            
+            if(a==null){
+                return NotFound();
+            }
+
+            a.ConsultantId = affectation.ConsultantId;
+            a.ProjectId = affectation.ProjectId;
             affectation.Datetime = DateTime.Now;
-            return _affectationDao.Update(affectation);
+            return _affectationDao.Update(a);
         }
 
         // DELETE api/<AffectationController>/5

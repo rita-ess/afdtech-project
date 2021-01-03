@@ -35,7 +35,6 @@ export class AffectationListComponent implements OnInit {
           d.consultant = data;
         });
       }));
-      console.log(data);
     });
   }
 

@@ -9,15 +9,20 @@
       </div>
       <div class="modal-body">
         <form [formGroup]="affectationForm" (ngSubmit)="updateAffectation()">
-          <select class="custom-select col-5" formControlName="project">
-            <option selected>Select a Project</option>
-            <option *ngFor="let p of projects" [value]="p.id">{{p.name}}</option>
-          </select>
-
-          <select class="custom-select col-5" formControlName="consultant">
-            <option selected>Select a Consultant</option>
-            <option *ngFor="let c of consultants" [value]="c.id">{{c.firstName}} {{c.lastName}}</option>
-          </select>
+          <div class="mb-3">
+            <label for="projects"  lass="form-label">Select a Project</label>
+            <select class="custom-select" formControlName="project" id="projects">
+              <option selected disabled>Select a Project</option>
+              <option *ngFor="let p of projects" [value]="p.id">{{p.name}}</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="consultant" class="form-label">Select a Consultant</label>
+            <select class="custom-select " formControlName="consultant" id="consultant">
+              <option value="0" selected>Select a Consultant</option>
+              <option *ngFor="let c of consultants" [value]="c.id">{{c.firstName}} {{c.lastName}}</option>
+            </select>
+          </div>
           <button type="submit" class="btn btn-warning">Update</button>
         </form>
       </div>

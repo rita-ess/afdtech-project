@@ -45,7 +45,6 @@ export class AffectationEditComponent implements OnInit {
   getConsultants(): void {
     this.serviceConsultant.getAll().subscribe((data: Consultant[]) => {
       this.consultants = data;
-      console.log('consultants', this.consultants);
     });
   }
 
@@ -57,7 +56,7 @@ export class AffectationEditComponent implements OnInit {
       formValue.consultant,
     );
     this.service.update(affectation).subscribe((data: any) => {
-      console.log('post project ', data);
+      alert('Updated');
     });
   }
 

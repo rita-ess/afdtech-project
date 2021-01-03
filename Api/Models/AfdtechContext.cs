@@ -12,10 +12,19 @@ namespace Api.Models
         public AfdtechContext(DbContextOptions<AfdtechContext> options)
             : base(options)
         {
+            
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {}
+        {
+            modelBuilder.Entity<Affectation>()
+            .HasOne(p => p.Project)
+            .WithOne(a => a.Affectation);
+
+            modelBuilder.Entity<Affectation>()
+            .HasOne(c => c.Consultant)
+            .WithOne(a => a.Affectation);
+        }
 
         public DbSet<Project> Projects { get; set; }
         public DbSet<Consultant> Consultants { get; set; }

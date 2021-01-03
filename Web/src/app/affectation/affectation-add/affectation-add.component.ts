@@ -36,15 +36,14 @@ export class AffectationAddComponent implements OnInit {
 
   initForm(): void {
     this.affectationForm = this.formBuilder.group({
-      project: ['', Validators.required],
-      consultant: ['', Validators.required]
+      project: ['null', Validators.required],
+      consultant: ['null', Validators.required]
     });
   }
 
   getConsultants(): void {
     this.serviceConsultant.getAll().subscribe((data: Consultant[]) => {
       this.consultants = data;
-      console.log('consultants', this.consultants);
     });
   }
 
@@ -56,7 +55,7 @@ export class AffectationAddComponent implements OnInit {
       formValue.consultant,
     );
     this.serviceAffectation.store(newAffectation).subscribe((data: any) => {
-      console.log('post affectation ', data);
+      alert('Affected');
     });
   }
 }

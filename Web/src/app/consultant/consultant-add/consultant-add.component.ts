@@ -60,7 +60,7 @@ export class ConsultantAddComponent implements OnInit {
       formValue.email
     );
     this.service.store(newConsultant).subscribe((data: any) => {
-      console.log('post consultants ', data);
+      alert('Added');
     });
   }
 

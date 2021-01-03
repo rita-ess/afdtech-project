@@ -52,7 +52,7 @@ export class ProjectAddComponent implements OnInit {
       formValue.description
     );
     this.service.store(newProject).subscribe((data: any) => {
-      console.log('post project ', data);
+      alert('Added');
     });
   }
 }

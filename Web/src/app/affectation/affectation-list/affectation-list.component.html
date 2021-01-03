@@ -9,8 +9,8 @@
   </thead>
   <tbody>
   <tr *ngFor="let a of affectations">
-    <td>{{a.projectId}}</td>
-    <td>{{a.consultantId}}</td>
+    <td>{{a.project?.name}}</td>
+    <td>{{a.consultant?.firstName}} {{a.consultant?.lastName}}</td>
     <td>{{a.datetime}}</td>
     <td>
       <button (click)="showModal(a)" class="btn btn-warning mr-1">Edit</button>

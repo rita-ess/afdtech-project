@@ -2,6 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {AffectationService} from '../../services/affectation.service';
 import {Affectation} from '../../models/Affectation.model';
 import {Consultant} from '../../models/Consultant.model';
+import {Project} from '../../models/Project.model';
+import {ProjectService} from '../../services/project.service';
+import {ConsultantService} from '../../services/consultant.service';
 
 @Component({
   selector: 'app-affectation-list',
@@ -10,7 +13,7 @@ import {Consultant} from '../../models/Consultant.model';
 })
 export class AffectationListComponent implements OnInit {
 
-  constructor(private service: AffectationService) {
+  constructor(private service: AffectationService, private serviceProject: ProjectService, private serviceConsultant: ConsultantService) {
   }
 
   affectations: any;
@@ -22,7 +25,17 @@ export class AffectationListComponent implements OnInit {
   getAffectations(): void {
     this.service.getAll().subscribe((data: Affectation[]) => {
       this.affectations = data;
-      console.log('affectations', this.affectations);
+
+      data.forEach((d => {
+        this.serviceProject.getById(d.projectId).subscribe((data: Project) => {
+          d.project = data;
+        });
+
+        this.serviceConsultant.getById(d.consultantId).subscribe((data: Consultant) => {
+          d.consultant = data;
+        });
+      }));
+      console.log(data);
     });
   }
 
@@ -30,7 +43,6 @@ export class AffectationListComponent implements OnInit {
   deleteAffectation(id: number): void {
     if (confirm('Do you really want to delete this ?')) {
       this.service.delete(id).subscribe((data: any) => {
-        console.log('post affectation ', data);
         this.getAffectations();
         alert('This Affectation was deleted');
       });

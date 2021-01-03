@@ -1,5 +1,5 @@
 // General API_URL
-export const SERVER = 'https://localhost:44371/api';
+export const SERVER = 'https://localhost:44349/api';
 
 // API URL PROJECTS
 export const SERVER_PROJECTS = SERVER + '/Project';

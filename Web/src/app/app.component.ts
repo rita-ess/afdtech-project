@@ -13,5 +13,6 @@ export class AppComponent {
   constructor(private router: Router) {
     this.routes = router.config;
     this.routes.pop();
+    this.router.navigateByUrl('projects/list');
   }
 }

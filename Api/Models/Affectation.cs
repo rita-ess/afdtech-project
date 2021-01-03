@@ -11,5 +11,9 @@ namespace Api.Models
         public int ProjectId { get; set; }
         public int ConsultantId { get; set; }
         public DateTime Datetime { get; set; }
+
+        public Project Project { get; set; }
+
+        public Consultant Consultant { get; set; }
     }
 }

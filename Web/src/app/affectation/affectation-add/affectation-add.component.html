@@ -1,13 +1,18 @@
 <form [formGroup]="affectationForm" (ngSubmit)="addAffectation()">
-  <select class="custom-select col-5" formControlName="project">
-    <option selected>Select a Project</option>
+  <div class="mb-3">
+  <label for="projects"  lass="form-label">Select a Project</label>
+  <select class="custom-select" formControlName="project" id="projects">
+    <option selected disabled value="null">list of Projects</option>
     <option *ngFor="let p of projects" [value]="p.id">{{p.name}}</option>
   </select>
-
-  <select class="custom-select col-5" formControlName="consultant">
-    <option value="0" selected>Select a Consultant</option>
+  </div>
+  <div class="mb-3">
+  <label for="consultant" class="form-label">Select a Consultant</label>
+  <select class="custom-select " formControlName="consultant" id="consultant">
+    <option value="0" selected disabled value="null">list of Consultants</option>
     <option *ngFor="let c of consultants" [value]="c.id">{{c.firstName}} {{c.lastName}}</option>
   </select>
+  </div>
 
   &nbsp;<button type="submit" class="btn btn-primary">Add</button>
 </form>

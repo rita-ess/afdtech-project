@@ -22,7 +22,7 @@ namespace Api.Dao
 
         public Affectation GetById(int id)
         {
-            return _afdtechContext.Affectations.FirstOrDefault(a => a.Id == id);
+            return _afdtechContext.Affectations.FirstOrDefault(a => a.Id == id );
         }
 
         public Affectation Store(Affectation affectation)

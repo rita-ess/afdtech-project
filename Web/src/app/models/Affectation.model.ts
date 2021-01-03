@@ -1,6 +1,6 @@
-import DateTimeFormat = Intl.DateTimeFormat;
-
 export class Affectation {
+  project: any;
+  consultant: any;
 
   constructor(
     public id: number,

@@ -29,6 +29,12 @@ namespace Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Enable Cors
+            services.AddCors(c =>
+            {
+                c.AddPolicy("AllowOrigin", options => { options.AllowAnyOrigin(); options.AllowAnyHeader(); options.AllowAnyMethod(); });
+            });
+
             // DB configuration
             services.AddDbContext<AfdtechContext>(option => option.UseSqlServer(Configuration.GetConnectionString("AfdtechDB")));
 
@@ -59,6 +65,9 @@ namespace Api
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCors(options => { options.AllowAnyOrigin(); options.AllowAnyHeader(); options.AllowAnyMethod(); });
+
 
             app.UseEndpoints(endpoints =>
             {

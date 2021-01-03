@@ -17,6 +17,8 @@ import { AffectationListComponent } from './affectation/affectation-list/affecta
 import {AffectationService} from './services/affectation.service';
 import {ConsultantService} from './services/consultant.service';
 import {ProjectService} from './services/project.service';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,12 @@ import {ProjectService} from './services/project.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserModule,
+    FormsModule,
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [
     AffectationService,

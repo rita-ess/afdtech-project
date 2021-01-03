@@ -14,6 +14,9 @@ import { ConsultantListComponent } from './consultant/consultant-list/consultant
 import { AffectationComponent } from './affectation/affectation.component';
 import { AffectationFormComponent } from './affectation/affectation-form/affectation-form.component';
 import { AffectationListComponent } from './affectation/affectation-list/affectation-list.component';
+import {AffectationService} from './services/affectation.service';
+import {ConsultantService} from './services/consultant.service';
+import {ProjectService} from './services/project.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,11 @@ import { AffectationListComponent } from './affectation/affectation-list/affecta
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    AffectationService,
+    ConsultantService,
+    ProjectService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

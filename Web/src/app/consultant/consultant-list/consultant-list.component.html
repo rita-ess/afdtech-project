@@ -1,3 +1,5 @@
+<div class="container" *ngIf="consultants?.length==0">No Consultant found</div>
+
 <div class="card mb-3" *ngFor="let c of consultants">
   <div class="card-body">
     <td><h5 class="card-title">{{c.firstName}}</h5>

@@ -10,6 +10,7 @@ import {Project} from '../../models/Project.model';
 export class ProjectListComponent implements OnInit {
 
   projects: any;
+  show: any;
 
   constructor(private service: ProjectService) {
   }
@@ -17,9 +18,11 @@ export class ProjectListComponent implements OnInit {
   ngOnInit(): void {
     this.getProjects();
   }
+
   public getProjects(): void {
     this.service.getAll().subscribe((data: Project[]) => {
       this.projects = data;
+      this.show = false;
     });
   }
 

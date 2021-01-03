@@ -1,4 +1,6 @@
-<table class="table">
+<div class="container" *ngIf="affectations?.length==0">No Affectation found</div>
+
+<table class="table" *ngIf="affectations?.length>0">
   <thead>
   <tr>
     <th scope="col">Project</th>

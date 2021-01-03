@@ -5,9 +5,9 @@
   </select>
 
   <select class="custom-select col-5" formControlName="consultant">
-    <option selected>Select a Consultant</option>
+    <option value="0" selected>Select a Consultant</option>
     <option *ngFor="let c of consultants" [value]="c.id">{{c.firstName}} {{c.lastName}}</option>
   </select>
 
-  <button type="submit" class="btn btn-primary">Add</button>
+  &nbsp;<button type="submit" class="btn btn-primary">Add</button>
 </form>

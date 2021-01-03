@@ -15,8 +15,6 @@ import {Affectation} from '../../models/Affectation.model';
 export class AffectationAddComponent implements OnInit {
 
   affectationForm: any;
-
-
   projects: any;
   consultants: any;
 

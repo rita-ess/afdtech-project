@@ -25,8 +25,8 @@ export class AffectationService {
     return this.http.post<Affectation>(`${SERVER_AFFECTATIONS}/`, affectation);
   }
 
-  update(id: number, affectation: Affectation): Observable<Affectation> {
-    return this.http.put<Affectation>(`${SERVER_AFFECTATIONS}/${id}`, affectation);
+  update(affectation: Affectation): Observable<Affectation> {
+    return this.http.put<Affectation>(`${SERVER_AFFECTATIONS}/${affectation.id}`, affectation);
   }
 
   delete(id: number): Observable<Affectation> {
